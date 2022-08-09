@@ -1,0 +1,293 @@
+@import './styles/variables.scss';
+@import './styles/animations.scss';
+
+html, body, #root {
+  height: 100% !important;
+  background-color: $white !important;
+}
+
+.body {
+  padding: 0 1.5rem;
+  padding-top: 5rem;
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.u {
+  &-backgroundPrimary {
+    background: $primary-color !important;
+
+    &:hover {
+      background: rgba($primary-color, 0.85) !important;
+    }
+  }
+
+  &-textLink {
+    background-color: transparent;
+    color: $primary-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba($primary-color, .85) !important;
+    }
+  }
+}
+
+.login, .signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  animation: fadein 1s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .Card {
+    box-shadow: rgba($primary-color, 0.35) 0px 5px 15px;
+  }
+
+  .form {
+    width: 400px;
+
+    .FormGroup {
+      .FormLabel {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        margin-top: .5rem;
+      }
+    }
+
+    .text-below-form {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .btn-submit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.loading {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem .5rem;
+  margin-bottom: 1rem;
+  background-color: $primary-color;
+  color: $white;
+  width: 100%;
+  position: absolute;
+
+  .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar {
+    cursor: pointer;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  .texts {
+    .title {
+      display: flex;
+      justify-content: center;
+      .text {
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .icon {
+        display: flex;
+        align-items: center;
+        margin-left: .5rem;
+        cursor: pointer;
+        opacity: .5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    .description {
+      display: flex;
+      justify-content: center;
+      font-size: .875rem;
+      font-weight: 300;
+    }
+  }
+}
+
+.categories {
+  animation: fadein 1s;
+
+  .categories-table {
+    margin-top: 1rem;
+
+    tbody {
+      tr {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0%;
+}
+
+tbody, .item-information {
+  animation: fadein 1s;
+}
+
+.FormGroup {
+  .FormLabel {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    margin-top: .5rem;
+  }
+}
+
+.btn {
+  &-add {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.item-information {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 2rem;
+  margin: 1rem 0rem;
+  padding: 2rem;
+  border: 1px solid $gray;
+  border-radius: .5rem;
+  background-color: $background-gray;
+
+  .image {
+    width: 300px;
+    height: 300px;
+    border-radius: .5rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn-update {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.individual-category {
+  position: relative;
+  min-height: 100%;
+  max-height: fit-content;
+}
+
+.add-photo-section {
+  font-size: .75rem;
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem .5rem;
+    // position: fixed;
+    bottom: 0;
+    flex-direction: column;
+    width: 100%;
+
+    .title {
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+.list-photos-wrapper {
+  .list-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 1.5rem 0;
+    grid-gap: 1rem;
+
+    .photos-col {
+      .photo-item {
+        margin-top: .5rem;
+
+        &:first-child {
+          margin-top: 0rem;
+        }
+      }
+    }
+
+    .photo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      padding: 0rem 0rem 0.5rem;
+      border: 1px solid $gray;
+      border-radius: .5rem;
+      height: fit-content;
+
+      .image {
+        width: 100%;
+      }
+
+      &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        animation: ease-in-out 1s;
+      }
+      img {
+
+        border-radius: .25rem;
+        width: 100%
+      }
+    }
+  }
+  .pagination {
+    position: relative;
+  }
+}
